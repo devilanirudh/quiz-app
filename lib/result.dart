@@ -15,7 +15,7 @@ class results extends StatelessWidget {
     if (resultscore <= 34) {
       resulttext = 'better';
     } else {
-      resulttext = 'get lost idiot';
+      resulttext = 'worst';
     }
     return resulttext;
   }
