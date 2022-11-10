@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class results extends StatelessWidget {
@@ -6,16 +7,16 @@ class results extends StatelessWidget {
   results(this.resultscore, this.resethandler);
   String get resultphrase {
     String resulttext;
-    if (resultscore <= 12) {
-      resulttext = 'good';
+    if (resultscore == 80) {
+      resulttext = 'you passed with flying colors';
     }
-    if (resultscore <= 24) {
-      resulttext = 'bad';
+    if (resultscore <= 40) {
+      resulttext = 'you can do better';
     }
-    if (resultscore <= 34) {
-      resulttext = 'better';
+    if (resultscore <= 20) {
+      resulttext = 'try again';
     } else {
-      resulttext = 'worst';
+      resulttext = (resultscore.toString());
     }
     return resulttext;
   }
@@ -28,7 +29,10 @@ class results extends StatelessWidget {
           Text(resultphrase, style: TextStyle(fontSize: 36)),
           ElevatedButton(
             child: Text('restart quiz!'),
-            onPressed: resethandler,
+            onPressed: () => {
+              resethandler(),
+              AudioPlayer().play(AssetSource('audio/KBC.mp3')),
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.resolveWith<Color>(
                 (Set<MaterialState> states) {

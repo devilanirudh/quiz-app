@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class Answer extends StatelessWidget {
   final Function selectHandler;
@@ -12,7 +13,10 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         child: Text(answerText),
-        onPressed: selectHandler,
+        onPressed: () => {
+          selectHandler(),
+          AudioPlayer().play(AssetSource('KBCC.mp3')),
+        },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
             (Set<MaterialState> states) {

@@ -15,30 +15,78 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
-      'questionText': 'What\'s your favorite color?',
+      'questionText': '“The report of my death was an exaggeration.”',
       'answers': [
-        {'text': 'Black', 'score': 10},
-        {'text': 'red', 'score': 5},
-        {'text': 'white', 'score': 20},
-        {'text': 'yellow', 'score': 7}
+        {'text': 'Napoleon I', 'score': 0},
+        {'text': 'Ronald Reagan', 'score': 0},
+        {'text': 'Elvis Presley', 'score': 0},
+        {'text': 'Mark Twain', 'score': 10}
       ],
     },
     {
-      'questionText': 'What\'s your favorite animal?',
+      'questionText':
+          '“Ask not what your country can do for you; ask what you can do for your country.”',
       'answers': [
-        {'text': 'rabbit', 'score': 10},
-        {'text': 'snake', 'score': 5},
-        {'text': 'elephant', 'score': 7},
-        {'text': 'lion', 'score': 20}
+        {'text': 'Winston Churchill', 'score': 0},
+        {'text': 'John F. Kennedy', 'score': 10},
+        {'text': 'Joseph Stalin', 'score': 0},
+        {'text': 'Marie-Antoinette', 'score': 0}
       ],
     },
     {
-      'questionText': 'Who\'s your favorite instructor?',
+      'questionText':
+          '“We didn’t land on Plymouth Rock; the rock was landed on us.”',
       'answers': [
-        {'text': 'anirudh', 'score': 30},
-        {'text': 'dev', 'score': 10},
-        {'text': 'sharma', 'score': 10},
-        {'text': 'god', 'score': 10}
+        {'text': 'Charles Cornwallis', 'score': 0},
+        {'text': 'Malcolm X', 'score': 10},
+        {'text': 'Henry Ford', 'score': 0},
+        {'text': 'Brigham Young', 'score': 0}
+      ],
+    },
+    {
+      'questionText':
+          '“The world will little note, nor long remember, what we say here, but it can never forget what they did here.”',
+      'answers': [
+        {'text': 'Vince Lombardi', 'score': 0},
+        {'text': 'Abraham Lincoln', 'score': 10},
+        {'text': 'Benjamin Franklin', 'score': 0},
+        {'text': 'Thomas Edison', 'score': 0}
+      ],
+    },
+    {
+      'questionText': '“Float like a butterfly, sting like a bee.”',
+      'answers': [
+        {'text': 'Jack the Ripper', 'score': 0},
+        {'text': 'Muhammad Ali', 'score': 10},
+        {'text': 'Sun Tzu', 'score': 0},
+        {'text': 'Douglas MacArthur', 'score': 0}
+      ],
+    },
+    {
+      'questionText': 'God “does not play dice.”',
+      'answers': [
+        {'text': 'George Washington', 'score': 0},
+        {'text': 'Albert Einstein', 'score': 10},
+        {'text': 'Frank Sinatra', 'score': 0},
+        {'text': 'Pope John Paul II', 'score': 0}
+      ],
+    },
+    {
+      'questionText': '“I don’t do drugs. I am drugs.”',
+      'answers': [
+        {'text': 'John Lennon', 'score': 0},
+        {'text': 'Abraham Lincoln', 'score': 0},
+        {'text': 'Benjamin Franklin', 'score': 0},
+        {'text': 'Salvador Dalí', 'score': 10}
+      ],
+    },
+    {
+      'questionText': '“I came, I saw, I conquered.”',
+      'answers': [
+        {'text': 'Alexander the Great', 'score': 0},
+        {'text': 'Abraham Lincoln', 'score': 0},
+        {'text': 'Julius Caesar', 'score': 10},
+        {'text': 'Dwight Eisenhower', 'score': 0}
       ],
     },
   ];
