@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 import './quiz.dart';
 import './result.dart';
@@ -116,16 +117,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar:
-            AppBar(backgroundColor: Color(0xff885566), title: Text('quiz app')),
-        body: _questionIndex < _questions.length
-            ? quiz(
-                answerQuestion: _answerQuestion,
-                questionIndex: _questionIndex,
-                questions: _questions,
-              )
-            : results(_totalscore, _resetquiz),
+      home: Container(
+        constraints: const BoxConstraints.expand(),
+        decoration: new BoxDecoration(
+            image: new DecorationImage(
+                image: new AssetImage("img.jpg"), fit: BoxFit.cover)),
+        child: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Color.fromARGB(255, 50, 117, 104),
+              title: Text('quiz app')),
+          body: _questionIndex < _questions.length
+              ? quiz(
+                  answerQuestion: _answerQuestion,
+                  questionIndex: _questionIndex,
+                  questions: _questions,
+                )
+              : results(_totalscore, _resetquiz),
+        ),
       ),
     );
   }

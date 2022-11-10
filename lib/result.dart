@@ -27,22 +27,40 @@ class results extends StatelessWidget {
       child: Column(
         children: [
           Text(resultphrase, style: TextStyle(fontSize: 36)),
-          ElevatedButton(
-            child: Text('restart quiz!'),
-            onPressed: () => {
-              resethandler(),
-              AudioPlayer().play(AssetSource('audio/KBC.mp3')),
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.pressed)) return Colors.red;
-                  return Colors.green;
+          Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: SizedBox(
+              width: 300.0,
+              height: 100.0,
+              child: ElevatedButton(
+                child: Text('restart quiz!'),
+                onPressed: () => {
+                  resethandler(),
+                  AudioPlayer().play(AssetSource('audio/KBC.mp3')),
                 },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                    (Set<MaterialState> states) {
+                      if (states.contains(MaterialState.pressed))
+                        return Colors.red;
+                      return Colors.green;
+                    },
+                  ),
+                ),
               ),
             ),
           ),
-          ElevatedButton(onPressed: null, child: Text(resultscore.toString())),
+          SizedBox(
+              width: 300.0,
+              height: 100.0,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: Color.fromARGB(255, 43, 174, 186),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      )),
+                  onPressed: (() {}),
+                  child: Text(resultscore.toString()))),
         ],
       ),
     );

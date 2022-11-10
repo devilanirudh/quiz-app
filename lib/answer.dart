@@ -10,19 +10,26 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      child: ElevatedButton(
-        child: Text(answerText),
-        onPressed: () => {
-          selectHandler(),
-          AudioPlayer().play(AssetSource('KBCC.mp3')),
-        },
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed)) return Colors.red;
-              return Colors.green;
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SizedBox(
+          width: 300.0,
+          height: 50.0,
+          child: ElevatedButton(
+            child: Text(answerText),
+            onPressed: () => {
+              selectHandler(),
+              AudioPlayer().play(AssetSource('KBCC.mp3')),
             },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.pressed))
+                    return Color.fromARGB(255, 76, 54, 244);
+                  return Color.fromARGB(255, 124, 187, 174);
+                },
+              ),
+            ),
           ),
         ),
       ),
